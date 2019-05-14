@@ -1,0 +1,10 @@
+var variable = "Hello, world!"; 
+print(variable);
+variable = "reassigning works";
+println(variable); 
+
+//println("Hehe my language somewhat works");
+
+println("but does this?" + " " + "I hope so!");
+
+//println("So the print function is "); print("working");

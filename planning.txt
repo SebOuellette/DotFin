@@ -1,0 +1,46 @@
+print function
+	adding strings
+	for debugging and testing integration
+
+Comments
+
+variables
+	variable class
+	pass in the variable type when setting contents
+	work through the variable based off the type, contents and references stored in strings either way
+	types:
+		int
+		string
+		decimal
+		undefined
+	^^^^ the actual strings that will be stored in the variable class
+
+--------------------------
+
+operators
+	types:
+		adding
+		dividing
+		multiplying
+		subtracting
+	things likely to come later:
+		modulus
+		decimal modulus
+		round
+		ceil
+		floor
+		trunc
+	Type overtaking order:
+		int -> decimal -> string
+	Order of operations
+	brackets[()] exponents[^]  {/ *} {+ -}
+
+loops
+	for
+	while
+	do while
+	foreach
+		loops through array
+
+arrays
+	2d arrays to store data
