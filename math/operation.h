@@ -1,6 +1,6 @@
 #include <string>
 
-#include "functions/findType.h"
+#include "../functions/findType.h"
 
 #ifndef OPERATION_H
 #define OPERATION_H

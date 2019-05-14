@@ -3,9 +3,9 @@
 #include <regex>
 #include <iostream>
 
-#include "functions/findVar.h"
+#include "findVar.h"
 
-#include "classes/variables.h"
+#include "../classes/variables.h"
 
 #ifndef PRINT_H
 #define PRINT_H

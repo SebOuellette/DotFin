@@ -1,0 +1,3 @@
+This file contains the command to compile the interpreter. This command works for either Linux, Windows, or Mac.
+
+g++ -std=c++11 -o main classes/variables.cpp main.cpp

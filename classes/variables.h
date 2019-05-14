@@ -1,7 +1,7 @@
 #include <iostream>
 #include <typeinfo>
 
-#include "functions/findVar.h"
+#include "../functions/findVar.h"
 
 // Gonna have to reconstruct this probably
 // Don't use template, just store int id for type
