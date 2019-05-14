@@ -1,6 +1,6 @@
 # DotFin
-#### Disclaimer: Since DotFin doesn't currently have it's own syntax highlighting format, the codeblocks will be 
-formatted in JavaScript format as it's somewhat the closest to what this language is planned to be. 
+**Disclaimer: Since DotFin doesn't currently have it's own syntax highlighting format, the codeblocks will be 
+formatted in JavaScript format as it's somewhat the closest to what this language is planned to be.**
 
 ## What is DotFin?
 DotFin is an interpreted programming language in development that is intended for creating 2d applications or games. DotFin is created with C++ so it has the capability to do some low level things like memory management from C's 
@@ -15,7 +15,7 @@ a "Hello, World" program, shown in multiple ways.
 var helloWorld = "Hello, World!";
 println(helloWorld);
 
-// Print using strign without variable
+// Print using string without variable
 println("Hello, World!");
 
 // Print by adding strings
@@ -48,6 +48,6 @@ not always be accepted. It may be deemed uneccessary, improper way of going abou
 adding something, please make sure that the code compiles and does not break existing features. 
 
 ### Date information
-Project started: May 6th, 2019
+**Project started:** May 6th, 2019
 
 
