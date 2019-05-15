@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "findVar.h"
+#include "strContents.h"
 
 #include "../classes/variables.h"
 
@@ -20,14 +21,15 @@ void findPrint(std::string file, std::vector<Variable>& varArray) {
 		if (std::regex_search(file, match, rgx)) {
 			// Found inside of print()
 			std::string contents = match[2];
-			if (match[1] == "ln") std::cout << std::endl;
 
 			if (varExists(varArray, contents)) {
 				std::cout << findVar(varArray, contents)->value;
 				
 			} else {
-				std::cout << addStr(contents);
+				std::cout << removeQuotes(contents);
 			}
+
+			if (match[1] == "ln") std::cout << std::endl;
 		}
 	}
 }

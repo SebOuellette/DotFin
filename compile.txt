@@ -1,3 +1,4 @@
-This file contains the command to compile the interpreter. This command works for either Linux, Windows, or Mac.
+This file contains the command to compile the interpreter. This command works for either Linux, Windows, Mac, or 
+any other operating system capable of using the g++ command and compiling c++. 
 
 g++ -std=c++11 -o main classes/variables.cpp main.cpp

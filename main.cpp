@@ -6,7 +6,6 @@
 #include <vector>
 
 #include "functions/splitLines.h"
-#include "functions/basicFuncs.h"
 #include "functions/print.h"
 #include "functions/variable.h"
 #include "functions/comment.h"
@@ -41,6 +40,9 @@ int main(int argc, char** argv) {
 
 		// Loop through each statement on a line
 		for(std::string fileStr : splitLines(file)) {
+			// Check and complete operations
+			fileStr = completeOperation(fileStr, varArray);
+
 			// check for variable
 			findVariable(fileStr, varArray);
 

@@ -4,10 +4,11 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "basicFuncs.h"
 #include "findVar.h"
 
 #include "../classes/variables.h"
+
+#include "../math/operation.h"
 
 #ifndef VARIABLE_H
 #define VARIABLE_H

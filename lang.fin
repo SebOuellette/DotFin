@@ -1,10 +1,13 @@
-var variable = "Hello, world!"; 
-print(variable);
-variable = "reassigning works";
+var variable = "Hello, " + "World!"; 
+println(variable);
+variable = "Reassigning works";
 println(variable); 
 
-//println("Hehe my language somewhat works");
+// Normal int addition
+println(1287 + 1976);
 
-println("but does this?" + " " + "I hope so!");
+// Int and string addition (working)
+println(5897 + 298000 + " <- means that mixed additon works");
 
-//println("So the print function is "); print("working");
+// Int and string addition (broken)
+println(5897 + 298000 + " - means that mixed additon works");

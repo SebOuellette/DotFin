@@ -19,7 +19,7 @@ println(helloWorld);
 println("Hello, World!");
 
 // Print by adding strings
-println("Hello" + ", " ++ "World!");
+println("Hello" + ", " + "World!");
 
 // Print with multiple print statements
 println("Hello, ");
