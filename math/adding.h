@@ -1,5 +1,6 @@
 #include <string>
 #include <regex>
+#include <iostream>
 
 #ifndef ADDING_H
 #define ADDING_H

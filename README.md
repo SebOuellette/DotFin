@@ -23,7 +23,7 @@ println("Hello" + ", " + "World!");
 
 // Print with multiple print statements
 print("Hello, ");
-print("World!");
+println("World!");
 
 // Print with multiple statements on one line
 print("Hello, "); print("World!");

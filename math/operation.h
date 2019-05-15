@@ -2,23 +2,23 @@
 
 #include "../functions/findType.h"
 #include "../functions/findVar.h"
+#include "../functions/escapeInQuotes.h"
+#include "../functions/unEscape.h"
 
 #include "adding.h"
 
 #ifndef OPERATION_H
 #define OPERATION_H
 
-// (?:(\d+)((?:\.)\d+)?|("[^"]*")|(\w+)) *(\+|\/|\-|\*) *(?:(\d+)((?:\.)\d+)?|("[^"]*")|(\w+))
+//(?:(\d+)((?:\.)\d+)?|("[^"]*")|(\w+)) *(\+|\/|\-|\*) *(?:(\d+)((?:\.)\d+)?|("[^"]*")|(\w+))
 
 //(?:\d+(?:\.)\d+?|"[^"]*"|\w+) *(?:\+|\/|\-|\*) *(?:\d+(?:\.)\d+?|"[^"]*"|\w+)
 
-/*
-This function should return the string of the completed operation for replacement
+//("?)[^"]*(?:\+|\/|\-|\*)[^"]*("?)
 
-|
-\/ change to std::string when able to */
 std::string completeOperation(std::string file, std::vector<Variable>& varArray) {
-	std::string ret = file;
+	std::string ret = escapeInQuotes(file, "+-/*");;
+
 	std::string operationRegex = "(?:(\\d+)((?:\\.)\\d+)?|(\"[^\"]*\")|(\\w+)) *(\\+|\\/|\\-|\\*) *(?:(\\d+)((?:\\.)\\d+)?|(\"[^\"]*\")|(\\w+))";
 	std::string operationReplace = "(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+) *(?:\\+|\\/|\\-|\\*) *(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+)";
 	std::regex opReplace(operationReplace);
@@ -67,6 +67,7 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		if (oper == "+") {
 			if (convType == "string") {
 				ret = regex_replace(ret, opReplace, addString(found1+"+"+found2));
+				//std::cout << ret << std::endl;
 			} else if (convType == "int") {
 				ret = regex_replace(ret, opReplace, addInt(found1+"+"+found2));
 			}
@@ -82,7 +83,7 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		}
 
 	}
-	return ret;
+	return unEscape(ret, "+-/*");
 }
 
 #endif

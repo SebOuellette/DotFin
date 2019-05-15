@@ -6,8 +6,5 @@ println(variable);
 // Normal int addition
 println(1287 + 1976);
 
-// Int and string addition (working)
-println(5897 + 298000 + " <- means that mixed additon works");
-
-// Int and string addition (broken)
+// Int and string addition
 println(5897 + 298000 + " - means that mixed additon works");
