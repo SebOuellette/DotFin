@@ -22,11 +22,15 @@ println("Hello, World!");
 println("Hello" + ", " + "World!");
 
 // Print with multiple print statements
-println("Hello, ");
+print("Hello, ");
 print("World!");
+
+// Print with multiple statements on one line
+print("Hello, "); print("World!");
 ```
 Output:
 ```
+Hello, World!
 Hello, World!
 Hello, World!
 Hello, World!
