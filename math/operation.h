@@ -14,10 +14,8 @@
 
 //(?:\d+(?:\.)\d+?|"[^"]*"|\w+) *(?:\+|\/|\-|\*) *(?:\d+(?:\.)\d+?|"[^"]*"|\w+)
 
-//("?)[^"]*(?:\+|\/|\-|\*)[^"]*("?)
-
 std::string completeOperation(std::string file, std::vector<Variable>& varArray) {
-	std::string ret = escapeInQuotes(file, "+-/*");;
+	std::string ret = file;
 
 	std::string operationRegex = "(?:(\\d+)((?:\\.)\\d+)?|(\"[^\"]*\")|(\\w+)) *(\\+|\\/|\\-|\\*) *(?:(\\d+)((?:\\.)\\d+)?|(\"[^\"]*\")|(\\w+))";
 	std::string operationReplace = "(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+) *(?:\\+|\\/|\\-|\\*) *(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+)";
@@ -83,7 +81,7 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		}
 
 	}
-	return unEscape(ret, "+-/*");
+	return ret;
 }
 
 #endif

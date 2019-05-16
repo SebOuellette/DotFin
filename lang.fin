@@ -8,3 +8,9 @@ println(1287 + 1976);
 
 // Int and string addition
 println(5897 + 298000 + " - means that mixed additon works");
+
+// String first addition
+println("hello there - " + 2928 + 172);
+
+// Escaped symbols
+println("These symbols are escaped // ();/+-*{}&^%.");

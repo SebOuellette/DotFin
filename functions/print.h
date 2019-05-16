@@ -15,7 +15,7 @@ void findPrint(std::string file, std::vector<Variable>& varArray) {
 	std::regex printCheck("print(ln)?(?=\\([^\\)]*\\))");
 	if (std::regex_search(file, printCheck)) {
 		// Print statement found
-		std::regex rgx("print(ln)?\\((([^\\)])*)\\);");
+		std::regex rgx("print(ln)?\\((.*)\\);");
 		std::smatch match;
 
 		if (std::regex_search(file, match, rgx)) {
