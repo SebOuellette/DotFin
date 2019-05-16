@@ -4,7 +4,7 @@ variable = "Reassigning works";
 println(variable); 
 
 // Normal int addition
-println(1287 + 1976);
+println(1287.1 + 1976 + 8648);
 
 // Int and string addition
 println(5897 + 298000 + " - means that mixed additon works");

@@ -1,6 +1,7 @@
 #include <string>
 #include <regex>
 #include <iostream>
+#include <cmath>
 
 #ifndef ADDING_H
 #define ADDING_H
@@ -25,6 +26,20 @@ std::string addInt(std::string contents) {
 	if (std::regex_search(contents, match, rgx)) {
 		int num1 = std::stoi((std::string)match[1]);
 		int num2 = std::stoi((std::string)match[2]);
+		ret = std::to_string(num1+num2);
+	}
+	return ret;
+}
+
+
+std::string addDecimal(std::string contents) {
+	std::regex rgx("(\\d+(?:\\.\\d+)?) *\\+ *(\\d+(?:\\.\\d+)?)");
+	std::smatch match;
+	std::string ret = contents;
+
+	if (std::regex_search(contents, match, rgx)) {
+		double num1 = std::stof((std::string)match[1]);
+		double num2 = std::stof((std::string)match[2]);
 		ret = std::to_string(num1+num2);
 	}
 	return ret;

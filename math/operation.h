@@ -10,14 +10,14 @@
 #ifndef OPERATION_H
 #define OPERATION_H
 
-//(?:(\d+)((?:\.)\d+)?|("[^"]*")|(\w+)) *(\+|\/|\-|\*) *(?:(\d+)((?:\.)\d+)?|("[^"]*")|(\w+))
+//(?:(\d+)(?:(?:\.)(\d+))?|("[^"]*")|(\w+)) *(\+|\/|\-|\*) *(?:(\d+)(?:(?:\.)(\d+))?|("[^"]*")|(\w+))
 
 //(?:\d+(?:\.)\d+?|"[^"]*"|\w+) *(?:\+|\/|\-|\*) *(?:\d+(?:\.)\d+?|"[^"]*"|\w+)
 
 std::string completeOperation(std::string file, std::vector<Variable>& varArray) {
 	std::string ret = file;
 
-	std::string operationRegex = "(?:(\\d+)((?:\\.)\\d+)?|(\"[^\"]*\")|(\\w+)) *(\\+|\\/|\\-|\\*) *(?:(\\d+)((?:\\.)\\d+)?|(\"[^\"]*\")|(\\w+))";
+	std::string operationRegex = "(?:(\\d+)(?:(?:\\.)(\\d+))?|(\"[^\"]*\")|(\\w+)) *(\\+|\\/|\\-|\\*) *(?:(\\d+)(?:(?:\\.)(\\d+))?|(\"[^\"]*\")|(\\w+))";
 	std::string operationReplace = "(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+) *(?:\\+|\\/|\\-|\\*) *(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+)";
 	std::regex opReplace(operationReplace);
 	std::regex opCheck(operationRegex);
@@ -65,9 +65,10 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		if (oper == "+") {
 			if (convType == "string") {
 				ret = regex_replace(ret, opReplace, addString(found1+"+"+found2));
-				//std::cout << ret << std::endl;
 			} else if (convType == "int") {
 				ret = regex_replace(ret, opReplace, addInt(found1+"+"+found2));
+			} else if (convType == "decimal") {
+				ret = regex_replace(ret, opReplace, addDecimal(found1+"+"+found2));
 			}
 		} else if (oper == "-") {
 			// subtracting
