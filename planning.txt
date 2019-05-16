@@ -32,6 +32,7 @@ operators
 		trunc
 	Type overtaking order:
 		int -> decimal -> string
+	Need to operate with long addition / multiplication / subtraction / division for decimals so I don't get the weird decimal displacement in c++
 	Order of operations
 	brackets[()] exponents[^]  {/ *} {+ -}
 

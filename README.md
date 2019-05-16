@@ -1,6 +1,6 @@
 # DotFin
-**Disclaimer: Since DotFin doesn't currently have its own syntax highlighting format, the codeblocks will be 
-formatted in JavaScript format as it's somewhat the closest to what this language is planned to be.**
+**Disclaimer1: Since DotFin doesn't currently have its own syntax highlighting format, the codeblocks will be formatted in JavaScript format as it's somewhat the closest to what this language is planned to be.**
+**Disclaimer2: I am well aware that this language's type handling is absolutely not conventional, but it works for my first experiment, and was the easiest way I could think of to get started**
 
 ## What is DotFin?
 DotFin is an interpreted programming language in development that is intended for creating 2d applications or games. DotFin is created with C++ so it has the capability to do some low-level things like memory management from C's 
