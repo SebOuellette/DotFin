@@ -18,14 +18,14 @@ println(helloWorld);
 
 // Print by adding variables
 var hello = "Hello";
-var world = "World! - Adding Variable";
-println(hello + ", " + world);
+var world = "World!";
+println(hello + ", " + world + " - Adding Variable");
 
 // Print using string without variable
 println("Hello, World! - String");
 
 // Print by adding strings
-println("Hello" + ", " + "World! - Adding Strings");
+println("Hello" + ", " + "World!" + " - Adding Strings");
 
 // Print with multiple print statements
 print("Hello, ");

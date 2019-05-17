@@ -1,6 +1,8 @@
 var variable = "Hello, " + "World!"; 
-var test2 = " What's up????";
-println(variable + test2);
+var test2 = " What's up?";
+var test3 = " third test";
+var test4 = " fourth test";
+println(variable + test2 + test3 + test4);
 variable = "Reassigning works";
 println(variable + test2); 
 

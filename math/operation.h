@@ -73,11 +73,11 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 
 		if (oper == "+") {
 			if (convType == "string") {
-				ret = regex_replace(ret, opReplace, addString(found1+"+"+found2));
+				ret = regex_replace(ret, opReplace, addString(found1+"+"+found2), std::regex_constants::format_first_only);
 			} else if (convType == "int") {
-				ret = regex_replace(ret, opReplace, addInt(found1+"+"+found2));
+				ret = regex_replace(ret, opReplace, addInt(found1+"+"+found2), std::regex_constants::format_first_only);
 			} else if (convType == "decimal") {
-				ret = regex_replace(ret, opReplace, addDecimal(found1+"+"+found2));
+				ret = regex_replace(ret, opReplace, addDecimal(found1+"+"+found2), std::regex_constants::format_first_only);
 			}
 		} else if (oper == "-") {
 			// subtracting
