@@ -13,29 +13,36 @@ The syntax is planned to appear like a basic language, think something close to 
 a "Hello, World" program, shown in multiple ways.
 ```js
 // Print using variable
-var helloWorld = "Hello, World!";
+var helloWorld = "Hello, World! - Variable";
 println(helloWorld);
 
+// Print by adding variables
+var hello = "Hello";
+var world = "World! - Adding Variable";
+println(hello + ", " + world);
+
 // Print using string without variable
-println("Hello, World!");
+println("Hello, World! - String");
 
 // Print by adding strings
-println("Hello" + ", " + "World!");
+println("Hello" + ", " + "World! - Adding Strings");
 
 // Print with multiple print statements
 print("Hello, ");
-println("World!");
+print("World!");
+println(" - Multiple Prints, Multiple Lines");
 
 // Print with multiple statements on one line
-print("Hello, "); print("World!");
+print("Hello, "); print("World!"); print(" - Multiple Prints, Same Line");
 ```
 Output:
 ```
-Hello, World!
-Hello, World!
-Hello, World!
-Hello, World!
-Hello, World!
+Hello, World! - Variable
+Hello, World! - Adding Variable
+Hello, World! - String
+Hello, World! - Adding Strings
+Hello, World! - Multiple Prints, Multiple Lines
+Hello, World! - Multiple Prints, Same Line
 ```
 All of this is valid DotFin as of this commit. 
 
