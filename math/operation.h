@@ -7,6 +7,8 @@
 
 #include "adding.h"
 
+#include "../classes/variables.h"
+
 #ifndef OPERATION_H
 #define OPERATION_H
 
@@ -29,12 +31,16 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		std::string decimals1 = match[2];
 		std::string strcontents1 = match[3];
 		std::string varfound1 = match[4];
-		std::string type1 = findType(wholeint1, decimals1, strcontents1, varfound1);
+		std::string type1 = findType(wholeint1, decimals1, strcontents1, varfound1, varArray);
 		std::string found1;
 		if (type1 == "int") found1 = wholeint1;
 		else if (type1 == "decimal") found1 = wholeint1+"."+decimals1;
 		else if (type1 == "string") found1 = strcontents1;
-		else if (type1 == "variable") found1 = findVar(varArray, type1)->value;
+		else if (type1 == "variable") {
+			Variable* var = findVar(varArray, varfound1);
+			found1 = var->value;
+			type1 = var->varType;
+		}
 		else if (type1 == "undefined") found1 = "undefined";
 
 		std::string oper = match[5];
@@ -43,13 +49,16 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		std::string decimals2 = match[7];
 		std::string strcontents2 = match[8];
 		std::string varfound2 = match[9];
-		std::string type2 = findType(wholeint2, decimals2, strcontents2, varfound2);
+		std::string type2 = findType(wholeint2, decimals2, strcontents2, varfound2, varArray);
 		std::string found2;
 		if (type2 == "int") found2 = wholeint2;
 		else if (type2 == "decimal") found2 = wholeint2+"."+decimals2;
 		else if (type2 == "string") found2 = strcontents2;
-		else if (type2 == "variable") found2 = findVar(varArray, type2)->value;
-		else if (type2 == "undefined") found2 = "undefined";
+		else if (type2 == "variable") {
+			Variable* var = findVar(varArray, varfound2);
+			found2 = var->value;
+			type2 = var->varType;
+		} else if (type2 == "undefined") found2 = "undefined";
 
 		std::string convType;
 		if (type1 == "string" || type2 == "string") {

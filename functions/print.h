@@ -23,7 +23,7 @@ void findPrint(std::string file, std::vector<Variable>& varArray) {
 			std::string contents = match[2];
 
 			if (varExists(varArray, contents)) {
-				std::cout << findVar(varArray, contents)->value;
+				std::cout << removeQuotes(findVar(varArray, contents)->value);
 				
 			} else {
 				std::cout << removeQuotes(contents);

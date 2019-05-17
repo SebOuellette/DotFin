@@ -1,9 +1,19 @@
 var variable = "Hello, " + "World!"; 
-println(variable);
+var test2 = " What's up????";
+println(variable + test2);
 variable = "Reassigning works";
-println(variable); 
+println(variable + test2); 
+
+// Variable addition
+var num1 = 1287.1;
+var num2 = 1976.6;
+var num3 = 8648;
+println(num1 + num2 + num3);
 
 // Normal int addition
+println(1287 + 1976 + 8648);
+
+// Normal decimal addition
 println(1287.1 + 1976.6 + 8648);
 
 // Int and string addition

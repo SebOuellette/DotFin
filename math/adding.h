@@ -58,7 +58,6 @@ std::string addDecimal(std::string contents) {
 		int num1 = std::stod(int1);
 		int num2 = std::stod(int2);
 		ret = std::to_string(num1+num2+carry)+'.'+std::to_string(decSum);
-		//std::cout << ret << std::endl;
 	}
 	return ret;
 }

@@ -33,7 +33,7 @@ void findVariable(std::string file, std::vector<Variable>& varArray) {
 			}
 			else if (str.length()) { // String
 				varArray.push_back(
-					Variable(str, "string", name, varArray, isConst)
+					Variable("\""+str+"\"", "string", name, varArray, isConst)
 				);
 			}
 			else if (wholeint.length() && !decimals.length()) { // Int
