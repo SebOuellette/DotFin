@@ -1,39 +1,26 @@
-#include <string>
 #include <regex>
 #include <iostream>
 #include <cmath>
 
-#ifndef ADDING_H
-#define ADDING_H
+#ifndef SUBTRACTING_H
+#define SUBTRACTING_H
 
-// Add Strings
-std::string addString(std::string contents) {
-	std::regex rgx("\"?([^\"]*)\"? *\\+ *\"?([^\"]*)\"?");
-	std::smatch match;
-	std::string ret = contents;
-
-	if (std::regex_search(contents, match, rgx)) {
-		ret = "\""+(std::string)match[1] + (std::string)match[2]+"\"";
-	}
-	return ret;
-}
-
-std::string addInt(std::string contents) {
-	std::regex rgx("(\\-?\\d+) *\\+ *(\\-?\\d+)");
+std::string subInt(std::string contents) {
+	std::regex rgx("(\\-?\\d+) *\\- *(\\-?\\d+)");
 	std::smatch match;
 	std::string ret = contents;
 
 	if (std::regex_search(contents, match, rgx)) {
 		int num1 = std::stoi((std::string)match[1]);
 		int num2 = std::stoi((std::string)match[2]);
-		ret = std::to_string(num1+num2);
+		ret = std::to_string(num1-num2);
 	}
 	return ret;
 }
 
 
-std::string addDecimal(std::string contents) {
-	std::regex rgx("(\\-?\\d+)(?:\\.(\\d+))? *\\+ *(\\-?\\d+)(?:\\.(\\d+))?");
+std::string subDecimal(std::string contents) {
+	std::regex rgx("(\\-?\\d+)(?:\\.(\\d+))? *\\- *(\\-?\\d+)(?:\\.(\\d+))?");
 	std::smatch match;
 	std::string ret = contents;
 
@@ -52,12 +39,12 @@ std::string addDecimal(std::string contents) {
 		}
 		int dec1 = std::stoi((std::string)decimal1);
 		int dec2 = std::stoi((std::string)decimal2);
-		int decSum = (dec1 + dec2) % (int)std::pow(10, decimal1.length());
+		int decDiff = (dec1 + dec2) % (int)std::pow(10, decimal1.length());
 		int carry = std::floor((dec1 + dec2) / std::pow(10, decimal1.length()));
 
 		int num1 = std::stod(int1);
 		int num2 = std::stod(int2);
-		ret = std::to_string(num1+num2+carry)+'.'+std::to_string(decSum);
+		ret = std::to_string(num1-num2+carry)+'.'+std::to_string(decSum);
 	}
 	return ret;
 }

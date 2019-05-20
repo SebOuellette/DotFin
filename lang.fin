@@ -13,7 +13,7 @@ var num3 = 8648;
 println(num1 + num2 + num3);
 
 // Normal int addition
-println(1287 + 1976 + 8648);
+println(1241 + 524 + 2345);
 
 // Normal decimal addition
 println(1287.1 + 1976.6 + 8648);
@@ -23,6 +23,9 @@ println(5897 + 298000 + " - means that mixed additon works");
 
 // String first addition
 println("hello there - " + 2928 + 172);
+
+// Normal int subtraction & addition
+println(1241 - 4513 + 833);
 
 // Escaped symbols
 println("These symbols are escaped // ();/+-*{}&^%.");

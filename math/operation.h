@@ -6,6 +6,7 @@
 #include "../functions/unEscape.h"
 
 #include "adding.h"
+#include "subtracting.h"
 
 #include "../classes/variables.h"
 
@@ -14,13 +15,13 @@
 
 //(?:(\d+)(?:(?:\.)(\d+))?|("[^"]*")|(\w+)) *(\+|\/|\-|\*) *(?:(\d+)(?:(?:\.)(\d+))?|("[^"]*")|(\w+))
 
-//(?:\d+(?:\.)\d+?|"[^"]*"|\w+) *(?:\+|\/|\-|\*) *(?:\d+(?:\.)\d+?|"[^"]*"|\w+)
+//(?:\d+(?:\.\d+)?|"[^"]*"|\w+) *(?:\+|\/|\-|\*) *(?:\d+(?:\.\d+)?|"[^"]*"|\w+)
 
 std::string completeOperation(std::string file, std::vector<Variable>& varArray) {
 	std::string ret = file;
 
-	std::string operationRegex = "(?:(\\d+)(?:(?:\\.)(\\d+))?|(\"[^\"]*\")|(\\w+)) *(\\+|\\/|\\-|\\*) *(?:(\\d+)(?:(?:\\.)(\\d+))?|(\"[^\"]*\")|(\\w+))";
-	std::string operationReplace = "(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+) *(?:\\+|\\/|\\-|\\*) *(?:\\d+(?:\\.)\\d+?|\"[^\"]*\"|\\w+)";
+	std::string operationRegex = "(?:(\\-?\\d+)(?:(?:\\.)(\\d+))?|(\"[^\"]*\")|(\\w+)) *(\\+|\\/|\\-|\\*) *(?:(\\-?\\d+)(?:(?:\\.)(\\d+))?|(\"[^\"]*\")|(\\w+))";
+	std::string operationReplace = "(?:\\-?\\d+(?:\\.\\d+)?|\"[^\"]*\"|\\w+) *(?:\\+|\\/|\\-|\\*) *(?:\\-?\\d+(?:\\.\\d+)?|\"[^\"]*\"|\\w+)";
 	std::regex opReplace(operationReplace);
 	std::regex opCheck(operationRegex);
 	std::smatch match;
@@ -72,6 +73,7 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 		}
 
 		if (oper == "+") {
+			// adding
 			if (convType == "string") {
 				ret = regex_replace(ret, opReplace, addString(found1+"+"+found2), std::regex_constants::format_first_only);
 			} else if (convType == "int") {
@@ -81,7 +83,9 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 			}
 		} else if (oper == "-") {
 			// subtracting
-			return file;
+			if (convType == "int") {
+				ret = regex_replace(ret, opReplace, subInt(found1+"-"+found2), std::regex_constants::format_first_only);
+			}
 		} else if (oper == "*") {
 			// multiplying
 			return file;
