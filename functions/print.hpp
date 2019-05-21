@@ -3,13 +3,13 @@
 #include <regex>
 #include <iostream>
 
-#include "findVar.h"
-#include "strContents.h"
+#include "findVar.hpp"
+#include "strContents.hpp"
 
-#include "../classes/variables.h"
+#include "../classes/variables.hpp"
 
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef PRINT_HPP
+#define PRINT_HPP
 
 void findPrint(std::string file, std::vector<Variable>& varArray) {
 	std::regex printCheck("print(ln)?(?=\\([^\\)]*\\))");

@@ -4,14 +4,14 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "findVar.h"
+#include "findVar.hpp"
 
-#include "../classes/variables.h"
+#include "../classes/variables.hpp"
 
-#include "../math/operation.h"
+#include "../math/operation.hpp"
 
-#ifndef VARIABLE_H
-#define VARIABLE_H
+#ifndef VARIABLE_HPP
+#define VARIABLE_HPP
 
 void findVariable(std::string file, std::vector<Variable>& varArray) {
 	std::regex varDefine("(?:(const) +)?var +(\\w+) *= *(?:([^\"|\\d| |;]+)|\"([^\"]*)\"|(\\d+)(?:\\.(\\d+))?);");

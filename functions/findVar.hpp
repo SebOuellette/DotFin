@@ -1,7 +1,7 @@
 #include <vector>
 
-#ifndef FINDVAR_H
-#define FINDVAR_H
+#ifndef FINDVAR_HPP
+#define FINDVAR_HPP
 
 template <class T>
 bool varExists(std::vector<T>& varArray, std::string name) {

@@ -1,13 +1,13 @@
 #include <iostream>
 #include <typeinfo>
 
-#include "../functions/findVar.h"
+#include "../functions/findVar.hpp"
 
 // Gonna have to reconstruct this probably
 // Don't use template, just store int id for type
 
-#ifndef VARIABLES_H
-#define VARIABLES_H
+#ifndef VARIABLES_HPP
+#define VARIABLES_HPP
 
 class Variable {
 public:

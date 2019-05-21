@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cmath>
 
-#ifndef SUBTRACTING_H
-#define SUBTRACTING_H
+#ifndef SUBTRACTING_HPP
+#define SUBTRACTING_HPP
 
 std::string subInt(std::string contents) {
 	std::regex rgx("(\\-?\\d+) *\\- *(\\-?\\d+)");
@@ -39,12 +39,22 @@ std::string subDecimal(std::string contents) {
 		}
 		int dec1 = std::stoi((std::string)decimal1);
 		int dec2 = std::stoi((std::string)decimal2);
-		int decDiff = (dec1 + dec2) % (int)std::pow(10, decimal1.length());
-		int carry = std::floor((dec1 + dec2) / std::pow(10, decimal1.length()));
 
-		int num1 = std::stod(int1);
-		int num2 = std::stod(int2);
-		ret = std::to_string(num1-num2+carry)+'.'+std::to_string(decSum);
+		int powResult = std::pow(10, decimal1.length());
+
+		int decDiff = (dec1 - dec2) + powResult % powResult;
+		int carry = std::floor((dec1 - dec2) / powResult);
+
+		int num1 = std::stoi(int1);
+		int num2 = std::stoi(int2);
+		int intResult = num1 - num2 - carry;
+		
+		std::string neg = "";
+		if (decDiff < 0) {
+			decDiff = -decDiff;
+			if (intResult > 0) neg = "-";
+		}
+		ret = neg+std::to_string(intResult)+'.'+std::to_string(decDiff);
 	}
 	return ret;
 }

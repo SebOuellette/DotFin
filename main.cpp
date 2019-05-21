@@ -5,16 +5,16 @@
 #include <regex>
 #include <vector>
 
-#include "functions/splitLines.h"
-#include "functions/print.h"
-#include "functions/variable.h"
-#include "functions/comment.h"
-#include "functions/escapeInQuotes.h"
-#include "functions/unEscape.h"
+#include "functions/splitLines.hpp"
+#include "functions/print.hpp"
+#include "functions/variable.hpp"
+#include "functions/comment.hpp"
+#include "functions/escapeInQuotes.hpp"
+#include "functions/unEscape.hpp"
 
-#include "math/operation.h"
+#include "math/operation.hpp"
 
-#include "classes/variables.h"
+#include "classes/variables.hpp"
 
 int main(int argc, char** argv) {
 	// The args are here for if I want to use them in the future
@@ -58,7 +58,5 @@ int main(int argc, char** argv) {
 			findPrint(fileStr, varArray);
 		}
 	}
-
-	std::cout << std::endl;
 	return 1;
 }

@@ -1,9 +1,11 @@
 #include <string>
 
-#include "findVar.h"
+#include "findVar.hpp"
 
-#ifndef FINDTYPE_H
-#define FINDTYPE_H
+#include "../classes/variables.hpp"
+
+#ifndef FINDTYPE_HPP
+#define FINDTYPE_HPP
 
 std::string findType(std::string wholeint, std::string decimals, std::string str, std::string var, std::vector<Variable>& varArray) {
 	if (wholeint.length() && !decimals.length()) {

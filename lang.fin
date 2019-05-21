@@ -27,5 +27,11 @@ println("hello there - " + 2928 + 172);
 // Normal int subtraction & addition
 println(1241 - 4513 + 833);
 
+// Decimal subtraction
+println(1.2 - 0.3);
+// Doesn't work cause it treats decimals different so we don't get that weird float thingy happening
+// It sees 2 - 3 which is -1 and 1 - 0 so it thinks the answer is -1.1 cause of how it's programmed
+// Idk figure it out since you're not tired in the future. It's 12:19 AM and aAAAAAAAAAAAAAAAAA help
+
 // Escaped symbols
 println("These symbols are escaped // ();/+-*{}&^%.");

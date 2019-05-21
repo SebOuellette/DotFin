@@ -1,8 +1,7 @@
 #include <regex>
 
-
-#ifndef STRCONTENTS_H
-#define STRCONTENTS_H
+#ifndef STRCONTENTS_HPP
+#define STRCONTENTS_HPP
 
 std::string removeQuotes(std::string contents) {
 	std::string ret = contents;

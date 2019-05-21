@@ -1,17 +1,17 @@
 #include <string>
 
-#include "../functions/findType.h"
-#include "../functions/findVar.h"
-#include "../functions/escapeInQuotes.h"
-#include "../functions/unEscape.h"
+#include "../functions/findType.hpp"
+#include "../functions/findVar.hpp"
+#include "../functions/escapeInQuotes.hpp"
+#include "../functions/unEscape.hpp"
 
-#include "adding.h"
-#include "subtracting.h"
+#include "adding.hpp"
+#include "subtracting.hpp"
 
-#include "../classes/variables.h"
+#include "../classes/variables.hpp"
 
-#ifndef OPERATION_H
-#define OPERATION_H
+#ifndef OPERATION_HPP
+#define OPERATION_HPP
 
 //(?:(\d+)(?:(?:\.)(\d+))?|("[^"]*")|(\w+)) *(\+|\/|\-|\*) *(?:(\d+)(?:(?:\.)(\d+))?|("[^"]*")|(\w+))
 
@@ -80,11 +80,17 @@ std::string completeOperation(std::string file, std::vector<Variable>& varArray)
 				ret = regex_replace(ret, opReplace, addInt(found1+"+"+found2), std::regex_constants::format_first_only);
 			} else if (convType == "decimal") {
 				ret = regex_replace(ret, opReplace, addDecimal(found1+"+"+found2), std::regex_constants::format_first_only);
+			} else {
+				return file;
 			}
 		} else if (oper == "-") {
 			// subtracting
 			if (convType == "int") {
 				ret = regex_replace(ret, opReplace, subInt(found1+"-"+found2), std::regex_constants::format_first_only);
+			} else if (convType == "decimal") {
+				ret = regex_replace(ret, opReplace, subDecimal(found1+"-"+found2), std::regex_constants::format_first_only);
+			} else {
+				return file;
 			}
 		} else if (oper == "*") {
 			// multiplying

@@ -3,8 +3,8 @@
 #include <iostream>
 #include <cmath>
 
-#ifndef ADDING_H
-#define ADDING_H
+#ifndef ADDING_HPP
+#define ADDING_HPP
 
 // Add Strings
 std::string addString(std::string contents) {

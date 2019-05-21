@@ -1,7 +1,7 @@
 #include <string>
 
-#ifndef ESCAPEINQUOTES_H
-#define ESCAPEINQUOTES_H
+#ifndef ESCAPEINQUOTES_HPP
+#define ESCAPEINQUOTES_HPP
 
 std::string escapeInQuotes(std::string line, std::string find) {
 	std::string ret = line;

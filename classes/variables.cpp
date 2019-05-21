@@ -1,6 +1,6 @@
 #include <string>
 
-#include "variables.h"
+#include "variables.hpp"
 
 Variable::Variable(std::string contents, std::string type, std::string namePassed, std::vector<Variable>& varArray, bool isConst = false):
 	isConst(isConst), name(namePassed) {

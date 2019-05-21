@@ -1,8 +1,8 @@
 #include <regex>
 #include <string>
 
-#ifndef COMMENT_H
-#define COMMENT_H
+#ifndef COMMENT_HPP
+#define COMMENT_HPP
 
 std::string removeComments(std::string line) {
 	std::regex commentCheck("\\/{2}");
