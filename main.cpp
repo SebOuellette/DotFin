@@ -16,6 +16,9 @@
 
 #include "classes/variables.hpp"
 
+#include "lexer/lexer.hpp"
+#include "lexer/token.hpp"
+
 int main(int argc, char** argv) {
 	// The args are here for if I want to use them in the future
 	// So that you can run command './main file.fin' to run the program
