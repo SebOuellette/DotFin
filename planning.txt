@@ -17,6 +17,8 @@ variables
 
 --------------------------
 
+MAKING THE LANGUAGE PROPER, USING LEXER, TOKENS, ETC
+
 operators
 	types:
 		adding

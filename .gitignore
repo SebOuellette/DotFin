@@ -38,3 +38,6 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Batch files
+*.bat
