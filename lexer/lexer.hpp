@@ -22,6 +22,10 @@ std::vector<Token> lex(std::string file) {
         std::regex variableCheck("^ *var *(\\w+)");
         std::regex stringCheck("^ *\"(\w+)\"");
         std::regex varReferenceCheck("^ *(\w+)");
+        std::regex intCheck("^ *(\\d+)");
+        std::regex assignCheck("^ *(=)");
+        std::regex compareCheck("^ *(>=|<=|==|!=|>|<)");
+        std::regex operationCheck("^ *(\+|-|\/|\*)");
 
         // List of if statements to lex the next segment into a token
         if (std::regex_search(toParse, match, functionCheck)) {
@@ -34,6 +38,14 @@ std::vector<Token> lex(std::string file) {
             tokenList.push_back(handleLex(&toParse, match[1], stringCheck, "string"));
         } else if (std::regex_search(toParse, match, varReferenceCheck)) {
             tokenList.push_back(handleLex(&toParse, match[1], varReferenceCheck, "varRef"));
+        } else if (std::regex_search(toParse, match, intCheck)) {
+            tokenList.push_back(handleLex(&toParse, match[1], intCheck, "int"));
+        } else if (std::regex_search(toParse, match, assignCheck)) {
+            tokenList.push_back(handleLex(&toParse, match[1], assignCheck, "assign"));
+        } else if (std::regex_search(toParse, match, compareCheck)) {
+            tokenList.push_back(handleLex(&toParse, match[1], compareCheck, "compare"));
+        } else if (std::regex_search(toParse, match, operationCheck)) {
+            tokenList.push_back(handleLex(&toParse, match[1], operationCheck, "operation"));
         } else {
             found = false;
         }
