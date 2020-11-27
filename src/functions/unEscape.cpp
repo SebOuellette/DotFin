@@ -1,7 +1,4 @@
-#include <string>
-
-#ifndef UNESCAPE_HPP
-#define UNESCAPE_HPP
+#include "unEscape.hpp"
 
 std::string unEscape(std::string line, std::string find) {
 	std::string ret = line;
@@ -15,5 +12,3 @@ std::string unEscape(std::string line, std::string find) {
 	}
 	return ret;
 }
-
-#endif

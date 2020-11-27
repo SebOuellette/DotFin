@@ -1,7 +1,4 @@
-#include <string>
-
-#ifndef ESCAPEINQUOTES_HPP
-#define ESCAPEINQUOTES_HPP
+#include "escapeInQuotes.hpp"
 
 std::string escapeInQuotes(std::string line, std::string find) {
 	std::string ret = line;
@@ -23,5 +20,3 @@ std::string escapeInQuotes(std::string line, std::string find) {
 	}
 	return ret;
 }
-
-#endif

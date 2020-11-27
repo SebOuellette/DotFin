@@ -1,8 +1,4 @@
-#include <string>
-#include <vector>
-
-#ifndef SPLITLINES_HPP
-#define SPLITLINES_HPP
+#include "splitLines.hpp"
 
 std::vector<std::string> splitLines(std::string str) {
 	std::vector<std::string> vec;
@@ -16,5 +12,3 @@ std::vector<std::string> splitLines(std::string str) {
 
 	return vec;
 }
-
-#endif

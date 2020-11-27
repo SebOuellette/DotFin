@@ -1,12 +1,5 @@
-#include <string>
-#include <regex>
-#include <iostream>
-#include <cmath>
+#include "adding.hpp"
 
-#ifndef ADDING_HPP
-#define ADDING_HPP
-
-// Add Strings
 std::string addString(std::string contents) {
 	std::regex rgx("\"?([^\"]*)\"? *\\+ *\"?([^\"]*)\"?");
 	std::smatch match;
@@ -30,7 +23,6 @@ std::string addInt(std::string contents) {
 	}
 	return ret;
 }
-
 
 std::string addDecimal(std::string contents) {
 	std::regex rgx("(\\-?\\d+)(?:\\.(\\d+))? *\\+ *(\\-?\\d+)(?:\\.(\\d+))?");
@@ -61,5 +53,3 @@ std::string addDecimal(std::string contents) {
 	}
 	return ret;
 }
-
-#endif

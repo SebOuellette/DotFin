@@ -1,9 +1,4 @@
-#include <regex>
-#include <iostream>
-#include <cmath>
-
-#ifndef SUBTRACTING_HPP
-#define SUBTRACTING_HPP
+#include "subtracting.hpp"
 
 std::string subInt(std::string contents) {
 	std::regex rgx("(\\-?\\d+) *\\- *(\\-?\\d+)");
@@ -17,7 +12,6 @@ std::string subInt(std::string contents) {
 	}
 	return ret;
 }
-
 
 std::string subDecimal(std::string contents) {
 	std::regex rgx("(\\-?\\d+)(?:\\.(\\d+))? *\\- *(\\-?\\d+)(?:\\.(\\d+))?");
@@ -58,5 +52,3 @@ std::string subDecimal(std::string contents) {
 	}
 	return ret;
 }
-
-#endif

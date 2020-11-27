@@ -1,7 +1,4 @@
-#include <regex>
-
-#ifndef STRCONTENTS_HPP
-#define STRCONTENTS_HPP
+#include "strContents.hpp"
 
 std::string removeQuotes(std::string contents) {
 	std::string ret = contents;
@@ -13,5 +10,3 @@ std::string removeQuotes(std::string contents) {
 	}
 	return ret;
 }
-
-#endif

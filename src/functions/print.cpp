@@ -1,15 +1,4 @@
-#include <string>
-#include <vector>
-#include <regex>
-#include <iostream>
-
-#include "findVar.hpp"
-#include "strContents.hpp"
-
-#include "../classes/variables.hpp"
-
-#ifndef PRINT_HPP
-#define PRINT_HPP
+#include "print.hpp"
 
 void findPrint(std::string file, std::vector<Variable>& varArray) {
 	std::regex printCheck("print(ln)?(?=\\([^\\)]*\\))");
@@ -33,5 +22,3 @@ void findPrint(std::string file, std::vector<Variable>& varArray) {
 		}
 	}
 }
-
-#endif

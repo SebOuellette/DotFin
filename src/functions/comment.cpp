@@ -1,8 +1,4 @@
-#include <regex>
-#include <string>
-
-#ifndef COMMENT_HPP
-#define COMMENT_HPP
+#include "comment.hpp"
 
 std::string removeComments(std::string line) {
 	std::regex commentCheck("\\/{2}");
@@ -18,5 +14,3 @@ std::string removeComments(std::string line) {
 	}
 	return line;
 }
-
-#endif

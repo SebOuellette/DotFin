@@ -5,33 +5,33 @@
 #include <regex>
 #include <vector>
 
-#include "functions/splitLines.hpp"
-#include "functions/print.hpp"
-#include "functions/variable.hpp"
-#include "functions/comment.hpp"
-#include "functions/escapeInQuotes.hpp"
-#include "functions/unEscape.hpp"
+#include "src/functions/splitLines.hpp"
+#include "src/functions/print.hpp"
+#include "src/functions/variable.hpp"
+#include "src/functions/comment.hpp"
+#include "src/functions/escapeInQuotes.hpp"
+#include "src/functions/unEscape.hpp"
 
-#include "math/operation.hpp"
+#include "src/math/operation.hpp"
 
-#include "classes/variables.hpp"
+#include "src/classes/variables.hpp"
 
-#include "lexer/lexer.hpp"
-#include "lexer/token.hpp"
+#include "src/lexer/lexer.hpp"
+#include "src/lexer/token.hpp"
 
 int main(int argc, char** argv) {
 	// The args are here for if I want to use them in the future
 	// So that you can run command './main file.fin' to run the program
 	std::string fileNamePassed(*argv);
 	std::ifstream text;
-	text.open("lang.fin");
+	text.open(argv[1]);
 
 	if (!text.is_open()) {
 		std::cout << "Failed to open" << std::endl;
 	}
 
 	// Open an input file stream
-	std::ifstream finFile("lang.fin");
+	std::ifstream finFile(argv[1]);
 
 	// Create the array of variables
 	std::vector<Variable> varArray;

@@ -1,12 +1,4 @@
-#include <string>
-#include <regex>
-#include <vector>
-
-#include "token.hpp"
-#include "handleLex.hpp"
-
-#ifndef LEXER_HPP
-#define LEXER_HPP
+#include "lexer.hpp"
 
 std::vector<Token> lex(std::string file) {
     std::string toParse;
@@ -20,12 +12,12 @@ std::vector<Token> lex(std::string file) {
         std::regex functionCheck("^ *(\\w+)?(?=\\()");
         std::regex bracketCheck("^ *\\(|\\)|\\{|\\}|\\[|\\]");
         std::regex variableCheck("^ *var *(\\w+)");
-        std::regex stringCheck("^ *\"(\w+)\"");
-        std::regex varReferenceCheck("^ *(\w+)");
+        std::regex stringCheck("^ *\"(\\w+)\"");
+        std::regex varReferenceCheck("^ *(\\w+)");
         std::regex intCheck("^ *(\\d+)");
         std::regex assignCheck("^ *(=)");
         std::regex compareCheck("^ *(>=|<=|==|!=|>|<)");
-        std::regex operationCheck("^ *(\+|-|\/|\*)");
+        std::regex operationCheck("^ *(\\+|-|\\/|\\*)");
 
         // List of if statements to lex the next segment into a token
         if (std::regex_search(toParse, match, functionCheck)) {
@@ -53,5 +45,3 @@ std::vector<Token> lex(std::string file) {
 
     return tokenList;
 }
-
-#endif
